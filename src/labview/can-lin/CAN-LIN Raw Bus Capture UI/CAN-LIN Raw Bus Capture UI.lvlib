@@ -84,6 +84,7 @@
 			<Item Name="Tree Filter.vi" Type="VI" URL="../Tree/Tree Filter.vi"/>
 			<Item Name="New data getter.vi" Type="VI" URL="../Tree/New data getter.vi"/>
 			<Item Name="Filter new tree data.vi" Type="VI" URL="../Tree/Filter new tree data.vi"/>
+			<Item Name="Filter Logic.vi" Type="VI" URL="../Tree/Filter Logic.vi"/>
 		</Item>
 	</Item>
 	<Item Name="Measurement UI.vi" Type="VI" URL="../Measurement UI.vi"/>
