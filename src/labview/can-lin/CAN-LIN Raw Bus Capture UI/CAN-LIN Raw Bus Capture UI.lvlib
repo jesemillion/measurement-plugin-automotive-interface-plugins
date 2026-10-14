@@ -79,6 +79,7 @@
 			<Item Name="Clear maps and sessions.vi" Type="VI" URL="../Tree/Clear maps and sessions.vi"/>
 			<Item Name="Build table.vi" Type="VI" URL="../Tree/Build table.vi"/>
 			<Item Name="Re-Populate Tree for Filter.vi" Type="VI" URL="../Tree/Re-Populate Tree for Filter.vi"/>
+			<Item Name="Rebuild tree.vi" Type="VI" URL="../Tree/Rebuild tree.vi"/>
 			<Item Name="Sort tree items.vi" Type="VI" URL="../Tree/Sort tree items.vi"/>
 			<Item Name="Group Filter Tree.vi" Type="VI" URL="../Tree/Group Filter Tree.vi"/>
 			<Item Name="Tree Filter.vi" Type="VI" URL="../Tree/Tree Filter.vi"/>
