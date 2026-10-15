@@ -191,6 +191,7 @@ The UI diagram contains three while loops. The state-processing loop handles Ini
 - **Save:** saves the trace data in the selected format (CSV or TDMS) and displays the result in the Status Message.
 - **SortByID:** reapplies the selected ordering to the Signal Table and Trace Window.
 - **Filter:** reapplies the filter to both views; clearing the filter restores the unfiltered data.
+- **DBC Path Value Change:** clears the previous maps and conversion sessions, then loads the selected DBC file and updates its frame and signal information without requiring RUN.
 - **HELP:** opens `CAN-LIN Raw Bus Capture.pdf`.
 - **Exit:** stops the UI event loop.
 
