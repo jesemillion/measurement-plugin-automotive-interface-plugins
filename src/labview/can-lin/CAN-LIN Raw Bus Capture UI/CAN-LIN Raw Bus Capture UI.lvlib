@@ -65,6 +65,28 @@
 			<Item Name="Update Table.vi" Type="VI" URL="../Update Table.vi"/>
 			<Item Name="Open Help PDF.vi" Type="VI" URL="../Open Help PDF.vi"/>
 		</Item>
+		<Item Name="Tree" Type="Folder">
+			<Item Name="Convert data into CAN Frame type.vi" Type="VI" URL="../Tree/Convert data into CAN Frame type.vi"/>
+			<Item Name="Populate Tree.vi" Type="VI" URL="../Tree/Populate Tree.vi"/>
+			<Item Name="Update Trace Tree.vi" Type="VI" URL="../Tree/Update Trace Tree.vi"/>
+			<Item Name="Convert RAW data with DBC.vi" Type="VI" URL="../Tree/Convert RAW data with DBC.vi"/>
+			<Item Name="Auto Scroll Tree.vi" Type="VI" URL="../Tree/Auto Scroll Tree.vi"/>
+			<Item Name="Map the Signals and Frames.vi" Type="VI" URL="../Tree/Map the Signals and Frames.vi"/>
+			<Item Name="Get Tree Data.vi" Type="VI" URL="../Tree/Get Tree Data.vi"/>
+			<Item Name="Order tree.vi" Type="VI" URL="../Tree/Order tree.vi"/>
+			<Item Name="Re-Populate Tree.vi" Type="VI" URL="../Tree/Re-Populate Tree.vi"/>
+			<Item Name="Filter Tree.vi" Type="VI" URL="../Tree/Filter Tree.vi"/>
+			<Item Name="Clear maps and sessions.vi" Type="VI" URL="../Tree/Clear maps and sessions.vi"/>
+			<Item Name="Build table.vi" Type="VI" URL="../Tree/Build table.vi"/>
+			<Item Name="Re-Populate Tree for Filter.vi" Type="VI" URL="../Tree/Re-Populate Tree for Filter.vi"/>
+			<Item Name="Rebuild tree.vi" Type="VI" URL="../Tree/Rebuild tree.vi"/>
+			<Item Name="Sort tree items.vi" Type="VI" URL="../Tree/Sort tree items.vi"/>
+			<Item Name="Group Filter Tree.vi" Type="VI" URL="../Tree/Group Filter Tree.vi"/>
+			<Item Name="Tree Filter.vi" Type="VI" URL="../Tree/Tree Filter.vi"/>
+			<Item Name="New data getter.vi" Type="VI" URL="../Tree/New data getter.vi"/>
+			<Item Name="Filter new tree data.vi" Type="VI" URL="../Tree/Filter new tree data.vi"/>
+			<Item Name="Evaluate Row.vi" Type="VI" URL="../Tree/Evaluate Row.vi"/>
+		</Item>
 	</Item>
 	<Item Name="Measurement UI.vi" Type="VI" URL="../Measurement UI.vi"/>
 </Library>

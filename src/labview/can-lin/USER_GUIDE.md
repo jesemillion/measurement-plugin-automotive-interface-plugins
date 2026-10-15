@@ -18,7 +18,9 @@ Select **CAN-LIN Raw Bus Capture** as a large Panel
 
 ![image](<img/06.png>)
 
-The plugin UI will shown in the Instrument Studio like this:
+The plugin UI in Instrument Studio is shown below.
+
+When a DBC file is loaded, the Trace Window displays raw data in a root/child tree, with decoded frame, signal, and value information. The Signal Table displays DBC-decoded signal information in the ID, Frame, Signal, Value, and Rate columns.
 
 ![image](<img/07.png>)
 
@@ -33,19 +35,23 @@ Select the bus type
 ![image](<img/09.png>)
 
 1. Select the CAN interface
-2. Select the IO Mode:
+2. Select Run Mode:
+    - Normal (standard operating mode; the CAN settings below apply in this mode)
+    - Subordinate (the interface operates under the control of a master device)
+3. Select the IO Mode:
     - CAN (Standard Controller Area Network)
     - CAN FD (Flexible Data-Rate)
     - CAN FD+BRS (Flexible Data-Rate and Bit Rate Switch)
-3. Set baudrate (hexadecimal value)
+4. Set baudrate (hexadecimal value)
     - 1E848 for 125 kbps
-4. Set FD ISO Mode (optional when IO Mode is set to CAN FD or CAN FD+BRS)
+5. Set FD ISO Mode (optional when IO Mode is set to CAN FD or CAN FD+BRS)
     - ISO
     - Non ISO
     - Legacy ISO
-5. Set FD baudrate (hexadecimal value) (optional when IO Mode is set to CAN FD or CAN FD+BRS)
+6. Set FD baudrate (hexadecimal value) (optional when IO Mode is set to CAN FD or CAN FD+BRS)
     - F4240 for 1 mbps
-6. Turn on the termination resistor if it is needed for the bus.
+7. Turn on the termination resistor if it is needed for the bus.
+8. Select the DBC file to decode CAN messages into frame and signal names and values.
 
 ### LIN configuration
 
@@ -73,7 +79,7 @@ Start the plugin with the **RUN** button in the Instrument Studio.
 ![image](<img/11.png>)
 
 It connects to the selected bus and starts listening. The service updates the UI every 150ms for CAN, and 100ms for LIN. The connection LED turns on.
-It shows the captured messages in the trace table and the bus status in the status area at the bottom.
+The Trace Window displays raw bus data and, when a DBC file is loaded, the decoded frame, signal, and value information in a tree. The Signal Table displays the ID, frame, signal, value, and rate without the raw data. The Status area displays the current bus status. The DBC Information section shows whether the DBC file is valid and the number of frames and signals it contains.
 
 ![image](<img/12.png>)
 
@@ -89,6 +95,11 @@ The default order of the messages is by timestamp, it can change by the **Sort b
 ### Filter
 Use the headers of the trace table to set conditions what to filter.
 
+In the Trace Window, if a root row matches the filter, all of its children are shown. If a child field (Frame, Signal, or Value) matches, its root row and only the matching child rows are shown. 
+In the Signal Table, only signal rows that match the filter are displayed.
+
+The Value and Rate columns may include units, such as V, km/h, or Hz. When filtering these columns, enter only the value and omit the unit (for example, `Rate < 99`).
+
 The filter expression uses the following syntax:
 
 - Sets of three arguments separated by logical operators.
@@ -100,7 +111,7 @@ The filter expression uses the following syntax:
 
 **Example:**
 
-    Protocol == UDP AND Length > 0.7 OR Source == 192.168.1.1
+    Value < 11 OR ID == 0x720
 
     Type == "CAN Data"
 
@@ -123,15 +134,18 @@ If an invalid filter is entered, a warning will be generated.
 ### Save trace to log file (TDMS, CSV)
 
 The user can set a path in the control area and save the trace data to CSV or TDMS file with the **SAVE** button. The file name auto generated as {BusType_tracelog_YYYYMMDD_HHIISSTUUU}
+The saved file contains the most recent 10,000 raw data rows retained in the background.
 User got response message at the bottom of the Status area.
 
 ### Pause / Resume capture
 
-With this button the user can pause (suspend) the trace table update. At the background the plugin continue capturing the messages and update the table on resume.
+Use this button to pause the trace table updates. Messages received while paused are not queued for later display and are lost. After you resume, only newly received messages appear in the tree.
 
 ### Auto Scrolling
 
-If the table is not paused, the table will automatically scroll past the selected packet. You can disable this auto-scroll by grabbing the slider and pulling it up. To re-enable auto-scroll, scroll to the bottom of the table. This can be difficult if you have constant incoming traffic, so we suggest pausing before scrolling down to the bottom, and then unpausing.
+Auto-scrolling is available in the Signal Table, but not in the Trace Window tree. In the tree, new data appears at the bottom. If a row with the same ID already exists, it is updated instead of adding a new row.
+
+When the Signal Table is not paused, it automatically scrolls to the latest packet. You can disable auto-scroll by moving the scrollbar up. To re-enable it, scroll to the bottom of the Signal Table. With continuous incoming traffic, reaching the bottom can be difficult. You can pause before scrolling, but messages received while paused are lost.
 
 When you have more than 10k packets in the table, this method does not matter. We suggest pausing if you want to spend time searching for specific packets for ease of use.
 
