@@ -20,7 +20,8 @@ Select **CAN-LIN Raw Bus Capture** as a large Panel
 
 The plugin UI in Instrument Studio is shown below.
 
-When a DBC file is loaded, the Trace Window displays raw data in a root/child tree, with decoded frame, signal, and value information. The Signal Table displays DBC-decoded signal information in the ID, Frame, Signal, Value, and Rate columns.
+The plugin can capture CAN data without a DBC file. Without one, the Trace Window displays raw data only. 
+When a DBC file is loaded, messages are decoded into frames and signals only if the DBC defines the corresponding message and signals. The Trace Window displays raw data in a root/child tree with any decoded frame, signal, and value information. The Signal Table displays decoded signal information in the ID, Frame, Signal, Value, and Rate columns.
 
 ![image](<img/07.png>)
 
@@ -42,16 +43,16 @@ Select the bus type
     - CAN (Standard Controller Area Network)
     - CAN FD (Flexible Data-Rate)
     - CAN FD+BRS (Flexible Data-Rate and Bit Rate Switch)
-4. Set baudrate (hexadecimal value)
-    - 1E848 for 125 kbps
+4. Set baudrate (decimal value)
+    - 125000 for 125 kbps
 5. Set FD ISO Mode (optional when IO Mode is set to CAN FD or CAN FD+BRS)
     - ISO
     - Non ISO
     - Legacy ISO
-6. Set FD baudrate (hexadecimal value) (optional when IO Mode is set to CAN FD or CAN FD+BRS)
-    - F4240 for 1 mbps
+6. Set FD baudrate (decimal value) (optional when IO Mode is set to CAN FD or CAN FD+BRS)
+    - 1000000 for 1 Mbps
 7. Turn on the termination resistor if it is needed for the bus.
-8. Select the DBC file to decode CAN messages into frame and signal names and values.
+8. Optionally, select a DBC file to decode CAN messages into frame and signal names and values. Only messages and signals defined in the DBC are decoded.
 
 ### LIN configuration
 
@@ -79,7 +80,7 @@ Start the plugin with the **RUN** button in the Instrument Studio.
 ![image](<img/11.png>)
 
 It connects to the selected bus and starts listening. The service updates the UI every 150ms for CAN, and 100ms for LIN. The connection LED turns on.
-The Trace Window displays raw bus data and, when a DBC file is loaded, the decoded frame, signal, and value information in a tree. The Signal Table displays the ID, frame, signal, value, and rate without the raw data. The Status area displays the current bus status. The DBC Information section shows whether the DBC file is valid and the number of frames and signals it contains.
+The Trace Window displays raw bus data and, when a DBC file is loaded, any matching decoded frame, signal, and value information in a tree. CAN capture works without a DBC; without one, no decoded frame or signal information is shown. The Signal Table displays the ID, frame, signal, value, and rate without the raw data. The Status area displays the current bus status. The DBC Information section shows whether the DBC file is valid and the number of frames and signals it contains.
 
 ![image](<img/12.png>)
 
