@@ -29,7 +29,7 @@ Then, in the lower right 'Properties' panel, fill in the properties for the pack
 
 ![Image](./img/04.png)
 
-Under Output Directory, specify a directory with a short path, such as *C:\Users\Admin\Documents\builds*.  
+Under Output Directory, specify a directory with a short path, such as `C:\Users\Admin\Documents\builds`.  
 If the directory does not exist, please create it.  
 Specify the version for the next build.  
 The version fields are as follows:  
@@ -41,13 +41,13 @@ Major_Version : Minor_Version : Bug_Fixes : Builds
 When the package is built, the installer will be placed here.
 
 &nbsp;
-5. Go to the Inputs panel in the top left, and add the path: hardware-validation/src/labview/builds.    
+5. Go to the Inputs panel in the top left, and add the path: `hardware-validation/src/labview/builds`.    
 
 ![Image](./img/05.png)
 
 Expand each of the plugins down one level.  
 &nbsp;
-6. Go to the center panel and ensure the following path exists: *C:\ProgramData\National Instruments\Plug-Ins\Measurements*.  
+6. Go to the center panel and ensure the following path exists: `C:\ProgramData\National Instruments\Plug-Ins\Measurements`.  
 ![Image](./img/06.png)
 
 &nbsp;
@@ -62,20 +62,24 @@ Note: Select the inner folders, not the outer folders expanded in step 5. If the
 The plugins should be inside the Measurements folder.  
 After installation, this is where the plugins are installed. This location allows the Measurement services to be found by Instrument Studio.
 
+&nbsp;
+8. Add the desired documentation files to the package by dragging them from the Input panel into the Documentation folder in the center panel. After installation, the files will be available in `C:\Users\Public\Documents\National Instruments\Automotive Interface Plugins\Documentation`.
+
+![Image](./img/13.png)
 
 &nbsp;
-8. Build the package by selecting the 'Build all Packages' button on the toolbar.     
+9. Build the package by selecting the 'Build all Packages' button on the toolbar.     
 ![Image](./img/09.png)
 
-The built package will be located here: *C:\Users\Admin\Documents\builds*
+The built package will be located here: `C:\Users\Admin\Documents\builds`
 
 
 
 ## Install steps
-1. In this location, *C:\Users\Admin\Documents\builds*, run the NIPM package install file and navigate through the prompts.  
+1. In this location, `C:\Users\Admin\Documents\builds`, run the NIPM package install file and navigate through the prompts.  
 ![Image](./img/10.png)
 
-2. If everything worked correctly, at the location *C:\ProgramData\National Instruments\Plug-Ins\Measurements*, 
+2. If everything worked correctly, at the location `C:\ProgramData\National Instruments\Plug-Ins\Measurements`, 
 the following files should be present.  
 ![Image](./img/11.png)
 
@@ -84,6 +88,6 @@ the following files should be present.
 
 # Documentation
 
-All the documenation will be installed at the following location:
+Versioned documentation packages in the repository are stored in `src/builds/builds`.
 
-*C:\Users\Admin\Documents\builds\hardware-validation\src\builds\builds\0.1.0.0\\*
+After installation, the documentation is available in `C:\Users\Public\Documents\National Instruments\Automotive Interface Plugins\Documentation`.
