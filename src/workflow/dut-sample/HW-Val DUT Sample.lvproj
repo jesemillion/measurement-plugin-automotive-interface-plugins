@@ -13,7 +13,7 @@
 		<Property Name="server.vi.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
 		<Item Name="DUT-Test" Type="Folder">
-			<Item Name="Test.vi" Type="VI" URL="../DUT-Test/Test.vi"/>
+			<Item Name="Read Signals.vi" Type="VI" URL="../DUT-Test/Read Signals.vi"/>
 		</Item>
 		<Item Name="DUT Main.vi" Type="VI" URL="../DUT Main.vi"/>
 		<Item Name="DUT Sample.lvclass" Type="LVClass" URL="../DUT Sample/DUT Sample.lvclass"/>
