@@ -12,6 +12,9 @@
 		<Property Name="server.vi.callsEnabled" Type="Bool">true</Property>
 		<Property Name="server.vi.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
+		<Item Name="DUT-Test" Type="Folder">
+			<Item Name="Test.vi" Type="VI" URL="../DUT-Test/Test.vi"/>
+		</Item>
 		<Item Name="DUT Main.vi" Type="VI" URL="../DUT Main.vi"/>
 		<Item Name="DUT Sample.lvclass" Type="LVClass" URL="../DUT Sample/DUT Sample.lvclass"/>
 		<Item Name="Launch N DUTs.vi" Type="VI" URL="../Launch N DUTs.vi"/>
