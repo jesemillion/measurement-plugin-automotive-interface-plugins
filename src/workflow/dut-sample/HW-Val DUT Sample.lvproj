@@ -13,7 +13,11 @@
 		<Property Name="server.vi.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
 		<Item Name="DUT-Test" Type="Folder">
+			<Item Name="Init Read Test.vi" Type="VI" URL="../../../../../measurement-plugin-automotive-interface-plugins/src/workflow/dut-sample/DUT-Test/Init Read Test.vi"/>
+			<Item Name="Init Write Test.vi" Type="VI" URL="../../../../../measurement-plugin-automotive-interface-plugins/src/workflow/dut-sample/DUT-Test/Init Write Test.vi"/>
+			<Item Name="Main Test.vi" Type="VI" URL="../../../../../measurement-plugin-automotive-interface-plugins/src/workflow/dut-sample/DUT-Test/Main Test.vi"/>
 			<Item Name="Read Signals.vi" Type="VI" URL="../DUT-Test/Read Signals.vi"/>
+			<Item Name="Write Signals.vi" Type="VI" URL="../../../../../measurement-plugin-automotive-interface-plugins/src/workflow/dut-sample/DUT-Test/Write Signals.vi"/>
 		</Item>
 		<Item Name="DUT Main.vi" Type="VI" URL="../DUT Main.vi"/>
 		<Item Name="DUT Sample.lvclass" Type="LVClass" URL="../DUT Sample/DUT Sample.lvclass"/>
